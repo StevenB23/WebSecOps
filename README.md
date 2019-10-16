@@ -11,4 +11,6 @@
 
 > parse-nmap.ps1 authpages.xml -OutputDelimiter " " | where {$_.Ports -match "open"} | Export-Csv Http-Open-hosts.csv
 
+* Run Python script
+
 > http-nmap-brute.py Http-Open-Hosts.csv
