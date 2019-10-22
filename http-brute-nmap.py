@@ -55,7 +55,7 @@ def http_brute(ipaddress,path,userdb=None,passdb=None):
     #brute.emptypass=True will attempt empty passwords
     #username as passwords guessing is on by default. Supply an empty passdb list and only this will be executed
     scan1 = scanner.scan(hosts=ipaddress, arguments=f'''
-        --script "http-brute,http-form-brute"
+        --script "http-brute,http-form-brute,http-default-accounts"
         --script-args=userdb={userdb},passdb={passdb},brute.emptypass=True,unpwdb.timelimit=0,http-brute.path={path},http-form-brute.path={path},http-default-accounts.basepath={path}
         -d -v -T2 -p 80,8080,443
         ''')#scan for ftp vulns using the scripts and attach associated arguments for them as needed
